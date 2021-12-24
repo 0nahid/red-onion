@@ -4,7 +4,6 @@ export default function BootomFooter() {
       <div className="flex flex-grow">
         <span className=" text-white">Made With 💖 by Nahid Hassan</span>
       </div>
-
       <div className="flex justify-end items-center space-x-6">
         <span className=" text-white cursor-pointer">Privacy Policy</span>
         <span className=" text-white cursor-pointer">Terms of Use</span>

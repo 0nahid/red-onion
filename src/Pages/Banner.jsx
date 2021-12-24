@@ -4,7 +4,7 @@ export default function Banner() {
     <>
       <section class="text-gray-600 banner mt-5 body-font">
         <div className="flex flex-col items-center justify-center h-full">
-          <h1 className="text-center text-3xl md:text-4xl lg:text-5xl poppins font-semibold text-gray-700">
+          <h1 className="text-center text-3xl md:text-4xl lg:text-5xl ins font-semibold text-gray-700">
             Best food waiting for your belly
           </h1>
           <div className="rounded-full p-1 box-border mt-8 bg-white overflow-hidden  ring-[#f91944]  focus:ring-4 w-96 flex items-center">
