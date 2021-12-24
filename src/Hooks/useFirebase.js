@@ -39,5 +39,5 @@ export default function useFirebase() {
             .then(() => { })
             .finally(() => setIsLoading(false));
     }
-    return { signInWithGoogle, logout, user, setIsLoading, isLoading };
+    return { signInWithGoogle, logout, user, isLoading };
 }
