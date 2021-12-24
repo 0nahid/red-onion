@@ -1,7 +1,7 @@
-import useFirebase from "../Hooks/useFirebase";
+import useAuth from "../Hooks/useAuth";
 
 export default function Login() {
-  const { signInWithGoogle, user, logout } = useFirebase();
+  const { signInWithGoogle, user } = useAuth();
   return (
     <div>
       <div className="flex justify-center">

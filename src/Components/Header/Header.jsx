@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import useFirebase from "../../Hooks/useFirebase";
+import useAuth from "../../Hooks/useAuth";
 import Logo from "../Logo/Logo";
 export default function Header() {
-  const { user, logout } = useFirebase();
+  const { user, logout } = useAuth();
   return (
     <>
       <header className="text-gray-600 body-font">
@@ -26,7 +26,11 @@ export default function Header() {
             </Link>
             {user?.email ? (
               <span className="mr-2 flex">
-                <img src={user?.photoURL} className="w-6 h-6 rounded-full mr-1" alt="" />
+                <img
+                  src={user?.photoURL}
+                  className="w-6 h-6 rounded-full mr-1"
+                  alt=""
+                />
                 {user?.displayName}
               </span>
             ) : (
@@ -38,12 +42,18 @@ export default function Header() {
               </Link>
             )}
           </nav>
-          {user?.email ? <button onClick={logout} className="inline-flex items-center bg-[#f91944] text-white border-0 py-1.5 px-4 focus:outline-none rounded-full text-base mt-4 md:mt-0">
-                Logout
-              </button> :
-          <button className="inline-flex items-center bg-[#f91944] text-white border-0 py-1.5 px-4 focus:outline-none rounded-full text-base mt-4 md:mt-0">
-            <Link to="/signup">Sign up</Link>
-          </button>}
+          {user?.email ? (
+            <button
+              onClick={logout}
+              className="inline-flex items-center bg-[#f91944] text-white border-0 py-1.5 px-4 focus:outline-none rounded-full text-base mt-4 md:mt-0"
+            >
+              Logout
+            </button>
+          ) : (
+            <button className="inline-flex items-center bg-[#f91944] text-white border-0 py-1.5 px-4 focus:outline-none rounded-full text-base mt-4 md:mt-0">
+              <Link to="/signup">Sign up</Link>
+            </button>
+          )}
         </div>
       </header>
     </>
