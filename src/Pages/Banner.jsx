@@ -2,7 +2,7 @@ import "./Banner.css";
 export default function Banner() {
   return (
     <>
-      <section class="text-gray-600 banner mt-5 body-font">
+      <section className="text-gray-600 banner mt-5 body-font">
         <div className="flex flex-col items-center justify-center h-full">
           <h1 className="text-center text-3xl md:text-4xl lg:text-5xl ins font-semibold text-gray-700">
             Best food waiting for your belly
