@@ -14,7 +14,7 @@ export default function Header() {
             <Logo />
           </Link>
           <nav className="md:ml-auto  flex flex-wrap items-center text-base justify-center">
-            <Link to="/login" className="mr-5 mt-1 hover:text-gray-900">
+            <Link to="/cart" className="mr-5 mt-1 hover:text-gray-900">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

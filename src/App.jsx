@@ -1,15 +1,15 @@
-import Footer from "./Components/Footer/Footer";
-import Header from "./Components/Header/Header";
+import { Route, Routes } from "react-router-dom";
 import AuthProvider from "./Context/AuthProvider";
-import Banner from "./Pages/Banner";
+import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+
 export default function App() {
   return (
     <AuthProvider>
-      <Header />
-      <Login />
-      <Banner />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </AuthProvider>
   );
 }
