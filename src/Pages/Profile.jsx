@@ -5,8 +5,8 @@ export default function Profile() {
   return (
     <>
       <Header />
-      <div className="grid place-items-center h-screen bg-gray-200">
-        <figure className="md:flex bg-gray-50 rounded-xl p-8 md:p-0  overflow-hidden ">
+      <div className="grid place-items-center h-screen bg-gray-50">
+        <figure className="md:flex bg-black text-white rounded-xl p-8 md:p-0  overflow-hidden ">
           <img
             className="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
             src={user?.photoURL}
