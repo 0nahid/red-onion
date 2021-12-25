@@ -31,7 +31,7 @@ export default function Header() {
                   className="w-6 h-6 rounded-full mr-1"
                   alt=""
                 />
-                {user?.displayName}
+                <Link to="/profile">{user?.displayName}</Link>
               </span>
             ) : (
               <Link
