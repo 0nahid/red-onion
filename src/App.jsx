@@ -3,6 +3,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./Context/AuthProvider";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import NoMatch from "./Pages/NoMatch";
 import Profile from "./Pages/Profile";
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
             </PrivateRoute>
           }
         />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </AuthProvider>
   );
