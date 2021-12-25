@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "image": "./Image/1.png",
+        "icon": "./ICON/4.png",
+        "title": "Fast Delivery",
+        "description": "Keep your systems in sync with automated web hook bases notifications each tume link is paid and how we dream about our future."
+    },
+    {
+        "id": 2,
+        "image": "./Image/2.png",
+        "icon": "./ICON/5.png",
+        "title": "A Good Auto Responder",
+        "description": "Keep your systems in sync with automated web hook bases notifications each tume link is paid and how we dream about our future."
+    },
+    {
+        "id": 3,
+        "image": "./Image/3.png",
+        "icon": "./ICON/6.png",
+        "title": "Home Delivery",
+        "description": "Keep your systems in sync with automated web hook bases notifications each tume link is paid and how we dream about our future."
+    }
+]
