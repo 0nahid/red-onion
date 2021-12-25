@@ -4,15 +4,6 @@ import useAuth from "../Hooks/useAuth";
 
 export default function Login() {
   const { signInWithGoogle, user } = useAuth();
-    // const navigator = useNavigate();
-    // const handleGoogleSignIn = () => {
-    //   signInWithGoogle()
-    //     .then((result) => {
-    //       navigator(-1); // -1 is the default value for the history.goBack()
-    //     })
-    //     .then((error) => {})
-    //     .finally(() => setIsLoading(false));
-    // };
   return (
     <div className="grid place-items-center h-screen">
       {user?.email ? (
