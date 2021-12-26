@@ -19,9 +19,6 @@ export default function Profile() {
               <div className="text-sky-500 dark:text-sky-400">
                 {user?.displayName}
               </div>
-              <div className="text-gray-700 dark:text-gray-500">
-                Staff Engineer, Algolia
-              </div>
               <div className=" font-light ">
                 Email: <span>{user?.email}</span> <br />
                 UID: <span>{user?.uid}</span>

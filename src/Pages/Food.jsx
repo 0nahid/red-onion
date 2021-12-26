@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Food({ title, image, description, price, id, type }) {
   return (
-    <div class="p-6 lg:w-1/3 transform transition duration-700 hover:scale-105 ">
+    <div className="p-6 lg:w-1/3 transform transition duration-700 hover:scale-105 ">
       <div className="bg-white border border-gray-100  hover:shadow p-4 rounded-lg relative">
         <span className="bg-red-100 border border-[#f91944] rounded-full text-primary text-sm  px-4 py-1 inline-block mb-4 ">
           {type}
