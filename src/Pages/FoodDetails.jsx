@@ -108,6 +108,30 @@ export default function FoodDetails() {
           </div>
         </div>
       </div>
+
+{/* Navigator Button */}
+<div className="inline-flex mt-3">
+        <Link
+          to={`/food/${
+            Number(foodId) > 1 ? Number(foodId - 1) : Number(foodId)
+          }`}
+        >
+          <button className="bg-[#f91944] hover:bg-[#33010b] text-gray-800 hover:text-white font-bold py-2 px-4 rounded mr-2">
+            Prev
+          </button>
+        </Link>
+
+        <Link
+          to={`/food/${
+            Number(foodId) <= 17 ? Number(foodId) + 1 : Number(foodId)
+          }`}
+        >
+          <button className="bg-[#f91944] hover:bg-[#33010b] text-gray-800 hover:text-white font-bold py-2 px-4 rounded">
+            Next
+          </button>
+        </Link>
+      </div>
+
     </div>
   );
 }
