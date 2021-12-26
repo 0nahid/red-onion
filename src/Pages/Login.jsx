@@ -2,11 +2,11 @@ import { FcGoogle } from "react-icons/fc";
 import { GrGithub } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-
+import './Login.css';
 export default function Login() {
   const { signInWithGoogle, user, signInWithGithub } = useAuth();
   return (
-    <div className="grid place-items-center h-screen">
+    <div className="grid place-items-center h-screen food">
       {user?.email ? (
         <span>
           Welcome {user?.displayName} <br />{" "}
