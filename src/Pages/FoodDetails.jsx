@@ -110,7 +110,7 @@ export default function FoodDetails() {
       </div>
 
       {/* Navigator Button */}
-      <div className="inline-flex mt-3">
+      <div className="inline-flex mt-6 md:mt-2">
         <Link
           to={`/food/${
             Number(foodId) > 1 ? Number(foodId - 1) : Number(foodId)

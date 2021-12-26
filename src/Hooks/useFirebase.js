@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import firebaseAuthentication from "../Firebase/firebase.init";
@@ -10,6 +10,8 @@ export default function useFirebase() {
     const navigator = useNavigate();
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
     const signInWithGoogle = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
@@ -19,6 +21,17 @@ export default function useFirebase() {
             })
             .finally(() => setIsLoading(false));
     }
+
+    const signInWithGithub = () => {
+        setIsLoading(true);
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                setUser(result.user);
+                navigator(-1); // -1 is the default value for the history.goBack()
+            })
+            .finally(() => setIsLoading(false));
+    }
+
     // observe user state change
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
@@ -39,5 +52,5 @@ export default function useFirebase() {
             .then(() => { })
             .finally(() => setIsLoading(false));
     }
-    return { signInWithGoogle, logout, user, isLoading };
+    return { signInWithGoogle, logout, user, isLoading, signInWithGithub };
 }
