@@ -7,11 +7,13 @@ export default function Food({ title, image, description, price, id, type }) {
         <span className="bg-red-100 border border-[#f91944] rounded-full text-primary text-sm  px-4 py-1 inline-block mb-4 ">
           {type}
         </span>
-        <img
-          className="w-64 mx-auto transform transition duration-300 hover:scale-105"
-          src={image}
-          alt=""
-        />
+        <Link to={`food/${id}`}>
+          <img
+            className="w-64 mx-auto transform transition duration-300 hover:scale-105"
+            src={image}
+            alt=""
+          />
+        </Link>
         <div className="flex flex-col items-center my-3 space-y-2">
           <h1 className="text-gray-900  text-lg">{title}</h1>
           <h2 className="text-gray-900  text-2xl font-bold">$ {price}</h2>
