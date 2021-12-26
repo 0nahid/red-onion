@@ -7,11 +7,14 @@ export default function Food({ title, image, description, price, id, type }) {
         <div className="flex justify-center ">
           <img src={image} className="w-52" alt="" />
         </div>
-        <button className="bg-[#f91944] text-white px-4 py-2 rounded-full mt-2">{type}</button>
+        <button className="text-gray-500 mt-2">{type}</button>
         <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
           {title}
         </h1>
-        <Link to={`${id}`} class="text-[#f91944] inline-flex items-center">
+        <Link
+          to={`${id}`}
+          class="text-white px-4 py-2 rounded-full bg-[#f91944] inline-flex items-center"
+        >
           Learn More
           <svg
             class="w-4 h-4 ml-2"
