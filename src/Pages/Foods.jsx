@@ -10,10 +10,14 @@ export default function Foods() {
     );
   }, []);
   return (
-    <>
-      {foods.map((food) => (
-        <Food key={food.id} {...food} />
-      ))}
-    </>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-5 mx-auto  ">
+        <div class="flex flex-wrap -m-4 justify-center">
+          {foods.map((food) => (
+            <Food key={food.id} {...food} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
