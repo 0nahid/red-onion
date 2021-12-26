@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./Context/AuthProvider";
+import FoodDetails from "./Pages/FoodDetails";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import NoMatch from "./Pages/NoMatch";
@@ -23,7 +24,17 @@ export default function App() {
           path="/"
           element={
             <PrivateRoute>
-              <Home />
+              {" "}
+              <Home />{" "}
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/food/:foodId"
+          element={
+            <PrivateRoute>
+              {" "}
+              <FoodDetails />{" "}
             </PrivateRoute>
           }
         />

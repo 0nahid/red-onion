@@ -3,32 +3,25 @@ import { Link } from "react-router-dom";
 export default function Food({ title, image, description, price, id, type }) {
   return (
     <div class="p-6 lg:w-1/3 transform transition duration-700 hover:scale-105 ">
-      <div class="h-full  hover:shadow bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-        <div className="flex justify-center ">
-          <img src={image} className="w-52" alt="" />
-        </div>
-        <button className="text-gray-500 mt-2">{type}</button>
-        <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
-          {title}
-        </h1>
-        <Link
-          to={`${id}`}
-          class="text-white px-4 py-2 rounded-full bg-[#f91944] inline-flex items-center"
-        >
-          Learn More
-          <svg
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+      <div className="bg-white border border-gray-100  hover:shadow p-4 rounded-lg relative">
+        <span className="bg-red-100 border border-[#f91944] rounded-full text-primary text-sm  px-4 py-1 inline-block mb-4 ">
+          {type}
+        </span>
+        <img
+          className="w-64 mx-auto transform transition duration-300 hover:scale-105"
+          src={image}
+          alt=""
+        />
+        <div className="flex flex-col items-center my-3 space-y-2">
+          <h1 className="text-gray-900  text-lg">{title}</h1>
+          <h2 className="text-gray-900  text-2xl font-bold">$ {price}</h2>
+          <Link
+            to={`food/${id}`}
+            className="bg-primary text-white bg-[#f91944] px-8 py-2 focus:outline-none  rounded-full mt-24 transform transition duration-300 hover:scale-105"
           >
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-          </svg>
-        </Link>
+            Order Now
+          </Link>
+        </div>
       </div>
     </div>
   );
