@@ -15,7 +15,6 @@ export default function useFirebase() {
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 setUser(result.user);
-                console.log(result.user);
                 navigator(-1); // -1 is the default value for the history.goBack()
             })
             .finally(() => setIsLoading(false));
