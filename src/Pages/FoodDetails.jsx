@@ -109,8 +109,8 @@ export default function FoodDetails() {
         </div>
       </div>
 
-{/* Navigator Button */}
-<div className="inline-flex mt-3">
+      {/* Navigator Button */}
+      <div className="inline-flex mt-3">
         <Link
           to={`/food/${
             Number(foodId) > 1 ? Number(foodId - 1) : Number(foodId)
@@ -131,7 +131,6 @@ export default function FoodDetails() {
           </button>
         </Link>
       </div>
-
     </div>
   );
 }
