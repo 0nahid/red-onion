@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import Logo from "../Logo/Logo";
+import { FiLogOut } from 'react-icons/fi';
+
 export default function Header() {
   const { user, logout } = useAuth();
   return (
     <>
       <header className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row ">
+        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link to="/" className="mb-4 md:mb-0">
             <Logo />
           </Link>
@@ -40,12 +42,7 @@ export default function Header() {
             )}
           </nav>
           {user?.email ? (
-            <button
-              onClick={logout}
-              className="inline-flex justify-center bg-[#f91944] text-white border-0 py-1.5 px-4 focus:outline-none rounded-full text-base mt-4 md:mt-0"
-            >
-              Logout
-            </button>
+            <FiLogOut className="cursor-pointer w-6 h-6 text-[#f91944]" onClick={logout} />
           ) : (
             <button className="inline-flex bg-[#f91944] text-white border-0 py-1.5 px-4 focus:outline-none rounded-full text-base mt-4 md:mt-0">
               <Link to="/signup">Sign up</Link>
