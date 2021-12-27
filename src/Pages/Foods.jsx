@@ -1,9 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Food from "./Food";
+import Skeleton from "./Skeleton";
 
 export default function Foods() {
   const [foods, setFoods] = useState([]);
+  const [loading, setLoading] = useState(false);
+  //loading
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
   useEffect(() => {
     axios("./foods.json").then((data) => setFoods(data.data));
   }, []);
@@ -19,9 +29,13 @@ export default function Foods() {
 
       <div className="container px-5 py-5 mx-auto  ">
         <div className="flex flex-wrap -m-4 justify-center">
-          {foods.map((food) => (
-            <Food key={food.id} {...food} />
-          ))}
+          {foods.map((food) =>
+            loading ? (
+              <Skeleton key={food.id} />
+            ) : (
+              <Food key={food.id} {...food} />
+            )
+          )}
         </div>
       </div>
     </section>
