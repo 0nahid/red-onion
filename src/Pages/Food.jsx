@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 export default function Food({ title, image, description, price, id, type }) {
   return (
-    <div className="p-6 lg:w-1/3 transform transition duration-700 hover:scale-105 ">
-      <div className="bg-white border border-gray-100  hover:shadow p-4 rounded-lg relative">
-        <span className="bg-red-100 border border-[#f91944] rounded-full text-primary text-sm  px-4 py-1 inline-block mb-4 ">
+    <div className="py-3 px-6 sm:px-3 sm:h-full md:p-6 sm:w-4/5 md:w-1/3 transform transition duration-700 hover:scale-105 ">
+      <div className="bg-white border border-gray-100 hover:shadow p-4 rounded-lg relative">
+        <span className="hidden bg-red-100 border border-[#f91944] rounded-full text-primary text-sm  px-4 py-1 sm:inline-block mb-4 ">
           {type}
         </span>
         <Link to={`food/${id}`}>
           <img
-            className="w-64 mx-auto transform transition duration-300 hover:scale-105"
+            className="w-64 px-16 md:px-0 mx-auto transform transition duration-300 hover:scale-105"
             src={image}
             alt=""
           />

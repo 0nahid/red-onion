@@ -2,11 +2,11 @@ import React from "react";
 
 const AboutItem = ({ id, image, icon, title, description }) => {
   return (
-    <div className="bg-white transform transition duration-700 hover:scale-105 p-6 rounded-2xl hover:shadow-xl ">
+    <div className="bg-white transform transition duration-700 hover:scale-105 p-6 rounded-2xl hover:shadow-xl">
       {/* image  */}
-      <div className="overflow-hidden rounded-2xl flex flex-grow">
+      <div className="overflow-hidden rounded-2xl flex flex-grow justify-center lg:max-h-[266px]">
         <img
-          className="transform transition duration-700"
+          className="transform transition duration-700 w-full h-full"
           src={image}
           alt={title}
         />
