@@ -19,7 +19,7 @@ export default function Foods() {
   }, []);
   return (
     <section className="text-gray-600 body-font">
-      <div className="flex items-center justify-center space-x-6">
+      <div className="flex items-center justify-center space-x-6 pt-3">
         <p className="text-gray-500 text-lg cursor-pointer underline decoration-[#f91944] ">
           Breakfast
         </p>
@@ -28,7 +28,7 @@ export default function Foods() {
       </div>
 
       <div className="container px-5 py-5 mx-auto  ">
-        <div className="flex flex-wrap -m-4 justify-center">
+        <div className="flex flex-wrap -m-4 justify-center h-max">
           {foods.map((food) =>
             loading ? (
               <Skeleton key={food.id} />
