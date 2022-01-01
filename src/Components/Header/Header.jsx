@@ -7,7 +7,7 @@ export default function Header() {
   const { user, logout } = useAuth();
   return (
     <>
-      <header className="text-gray-600 body-font mb-32">
+      <header className="text-gray-600 body-font mb-0 md:mb-32">
         <div className="relative mx-auto flex flex-wrap py-5 px-2 sm:p-5 sm:z-50 flex-col sm:fixed sm:top-0 sm:shadow-md sm:w-[100vw] sm:bg-white sm:flex-nowrap sm:justify-between sm:flex-row items-center">
           <Link to="/" className="mb-4 sm:mb-0">
             <Logo />
