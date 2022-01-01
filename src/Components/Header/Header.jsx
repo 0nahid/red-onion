@@ -12,8 +12,8 @@ export default function Header() {
           <Link to="/" className="mb-4 sm:mb-0">
             <Logo />
           </Link>
-          <nav className="z-50 bg-white border-slate-200 fixed bottom-0 left-0 border-t py-3 w-full text-base sm:border-t-0 sm:w-96 sm:relative md:border-0">
-            <div className="flex flex-nowrap w-1/2 items-center justify-between mx-auto sm:justify-right sm:mr-0 sm:ml-auto">
+          <nav className="z-50 bg-white border-slate-200 fixed bottom-0 left-0 border-t py-3 w-full text-base sm:border-t-0 sm:w-2/4 sm:relative md:border-0">
+            <div className="flex flex-nowrap w-full items-center justify-between mx-auto sm:justify-end sm:mr-0 sm:ml-auto">
               <Link to="/cart" className="mr-5 mt-1 hover:text-gray-900 md:mr-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export default function Header() {
                     alt=""
                     />
                   </Link>
-                  {/* <Link to="/profile" className="hidden md:block">{user?.displayName}</Link> */}
+                  <Link to="/profile" className="hidden md:block">{user?.displayName}</Link>
                 </span>
               ) : (
                 <Link
