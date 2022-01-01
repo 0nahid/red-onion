@@ -15,7 +15,7 @@ export default function FoodDetails() {
   return (
     <>
       <Header />
-      <div className="container mx-auto -mt-8">
+      <div className="container mx-auto">
         <Link
           className="hover:underline poppins text-gray-700 mb-5 md:mb-1 select-none flex items-center space-x-2"
           to="/"
