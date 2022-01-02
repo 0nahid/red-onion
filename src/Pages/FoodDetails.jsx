@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../Components/Header/Header";
-import { addToDb } from "../Data/fakeDB";
+import { addToDb, removeFromDb } from "../Data/fakeDB";
 
 export default function FoodDetails() {
   const { foodId } = useParams();
@@ -18,6 +18,10 @@ export default function FoodDetails() {
     // set to local storage
     addToDb(foodId);
     console.log('foodId', foodId);
+  }
+  const handleRemove = (foodId) => {
+    // remove from local storage
+    removeFromDb(foodId);
   }
   return (
     <>
@@ -105,6 +109,7 @@ export default function FoodDetails() {
                   </svg>
                   <span>Add to Cart</span>
                 </button>
+                <button onClick={()=>handleRemove(foodId)}>Remove</button>
               </div>
             </div>
             <div className="order-1 md:order-2 lg:order-2">
