@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../Components/Header/Header";
+import { addToDb } from "../Data/fakeDB";
 
 export default function FoodDetails() {
   const { foodId } = useParams();
@@ -12,6 +13,12 @@ export default function FoodDetails() {
       setFoodDetails(data.data?.[foodId - 1])
     );
   }, [foodId]);
+  // handle add to cart
+  const handleAddToCart = (foodId) => {
+    // set to local storage
+    addToDb(foodId);
+    console.log('foodId', foodId);
+  }
   return (
     <>
       <Header />
@@ -83,7 +90,7 @@ export default function FoodDetails() {
                 </div>
               </div>
               <div className="mt-8 flex items-center justify-center md:justify-start lg:justify-start">
-                <button className="flex items-center space-x-3 bg-primary px-6 py-3 bg-[#f91944] text-white poppins rounded-full ring-red-300 focus:outline-none focus:ring-4 transform transition duration-700 ">
+                <button onClick={() => handleAddToCart(foodId)} className="flex items-center space-x-3 bg-primary px-6 py-3 bg-[#f91944] text-white poppins rounded-full ring-red-300 focus:outline-none focus:ring-4 transform transition duration-700 ">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -113,9 +120,8 @@ export default function FoodDetails() {
         {/* Navigator Button */}
         <div className="inline-flex">
           <Link
-            to={`/food/${
-              Number(foodId) > 1 ? Number(foodId - 1) : Number(foodId)
-            }`}
+            to={`/food/${Number(foodId) > 1 ? Number(foodId - 1) : Number(foodId)
+              }`}
           >
             <button className="bg-[#f91944] hover:bg-[#33010b] text-gray-800 hover:text-white font-bold py-2 px-4 rounded mr-2">
               Prev
@@ -123,9 +129,8 @@ export default function FoodDetails() {
           </Link>
 
           <Link
-            to={`/food/${
-              Number(foodId) <= 17 ? Number(foodId) + 1 : Number(foodId)
-            }`}
+            to={`/food/${Number(foodId) <= 17 ? Number(foodId) + 1 : Number(foodId)
+              }`}
           >
             <button className="bg-[#f91944] hover:bg-[#33010b] text-gray-800 hover:text-white font-bold py-2 px-4 rounded">
               Next

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./Context/AuthProvider";
+import Cart from "./Pages/Cart";
 import FoodDetails from "./Pages/FoodDetails";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
@@ -26,6 +27,15 @@ export default function App() {
             <PrivateRoute>
               {" "}
               <Home />{" "}
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              {" "}
+              <Cart />{" "}
             </PrivateRoute>
           }
         />
