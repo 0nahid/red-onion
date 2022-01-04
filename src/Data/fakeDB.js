@@ -5,7 +5,6 @@ const setDb = (cart) => localStorage.setItem('cart', JSON.stringify(cart));
 export const addToDb = (foodId) => {
     const existingCart = getDb();
     let cart = {};
-    console.log(cart);
     if (!existingCart) {
         cart[foodId] = 1;
     } else {

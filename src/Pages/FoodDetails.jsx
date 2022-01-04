@@ -2,9 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../Components/Header/Header";
-import { addToDb, removeFromDb } from "../Data/fakeDB";
+import { addToDb } from "../Data/fakeDB";
 
 export default function FoodDetails() {
+  const [cart, setCart] = useState([]);
   const { foodId } = useParams();
   // Food Details
   const [foodDetails, setFoodDetails] = useState({});
@@ -17,12 +18,15 @@ export default function FoodDetails() {
   const handleAddToCart = (foodId) => {
     // set to local storage
     addToDb(foodId);
-    console.log('foodId', foodId);
+    // set to cart
+    setCart([...cart, foodId]);
+    console.log(cart);
   }
-  const handleRemove = (foodId) => {
-    // remove from local storage
-    removeFromDb(foodId);
+
+  const handleIncrease = () =>{
+
   }
+
   return (
     <>
       <Header />
@@ -72,7 +76,7 @@ export default function FoodDetails() {
                   >
                     <path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
                   </svg>
-                  <span className="text-lg text-gray-700 poppins select-none">
+                  <span  className="text-lg text-gray-700 poppins select-none">
                     1
                   </span>
                   <svg
@@ -109,7 +113,6 @@ export default function FoodDetails() {
                   </svg>
                   <span>Add to Cart</span>
                 </button>
-                <button onClick={()=>handleRemove(foodId)}>Remove</button>
               </div>
             </div>
             <div className="order-1 md:order-2 lg:order-2">
